@@ -1,0 +1,7 @@
+---
+version: 1.0.0
+description: i2c
+dependencies:
+  esp-idf-lib/hd44780:
+    version: "*"
+    override_path: "../../../"
