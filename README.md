@@ -11,7 +11,7 @@ Driver for HD44780 compatible LCD text displays.
 ## Installation
 
 ```sh
-idf.py add-dependency "esp-idf-lib/hd44780^1.2.0
+idf.py add-dependency esp-idf-lib/hd44780^1.2.0
 ```
 
 ## Support
