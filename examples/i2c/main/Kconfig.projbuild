@@ -3,5 +3,5 @@ menu "Example configuration"
         hex "I2C address of PCF8574"
         default 0x27
 
-    rsource "../../../../devtools/Kconfig.i2c"
+    rsource "../../../Kconfig.i2c"
 endmenu
