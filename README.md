@@ -1,5 +1,9 @@
 # esp-idf-lib/hd44780
 
+[![Build examples](https://github.com/esp-idf-lib/hd44780/actions/workflows//build.yml/badge.svg)](https://github.com/esp-idf-lib/hd44780/actions/workflows//build.yml)
+[![Build docs](https://github.com/esp-idf-lib/hd44780/actions/workflows//build-docs.yml/badge.svg)](https://github.com/esp-idf-lib/hd44780/actions/workflows//build-docs.yml)
+[![Validation](https://github.com/esp-idf-lib/hd44780/actions/workflows//validate-component.yml/badge.svg)](https://github.com/esp-idf-lib/hd44780/actions/workflows//validate-component.yml)
+
 Driver for HD44780 compatible LCD text displays.
 
 * [Documentation](https://esp-idf-lib.github.io/hd44780/)
@@ -11,7 +15,7 @@ Driver for HD44780 compatible LCD text displays.
 ## Installation
 
 ```sh
-idf.py add-dependency esp-idf-lib/hd44780^1.2.0
+idf.py add-dependency esp-idf-lib/hd44780
 ```
 
 ## Support
