@@ -5,3 +5,5 @@ dependencies:
     override_path: ../../../
   esp-idf-lib/esp_idf_lib_helpers:
     version: '*'
+  esp-idf-lib/pcf8574:
+    version: '*'
