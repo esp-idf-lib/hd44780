@@ -8,3 +8,5 @@ dependencies:
     version: '*'
   esp-idf-lib/pcf8574:
     version: '*'
+  esp-idf-lib/bmp280:
+    version: '*'
