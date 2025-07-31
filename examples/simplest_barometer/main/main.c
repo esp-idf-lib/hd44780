@@ -17,7 +17,8 @@ static esp_err_t write_lcd_data(const hd44780_t *lcd, uint8_t data)
 void lcd_test(void *pvParameters)
 {
     // Fill LCD descriptor
-    hd44780_t lcd = {
+    hd44780_t lcd =
+    {
         .write_cb = write_lcd_data, // use callback to send data to LCD by I2C GPIO expander
         .font = HD44780_FONT_5X8,
         .lines = 2,

@@ -13,14 +13,16 @@ static uint32_t get_time_sec()
     return tv.tv_sec;
 }
 
-static const uint8_t char_data[] = {
+static const uint8_t char_data[] =
+{
     0x04, 0x0e, 0x0e, 0x0e, 0x1f, 0x00, 0x04, 0x00,
     0x1f, 0x11, 0x0a, 0x04, 0x0a, 0x11, 0x1f, 0x00
 };
 
 void lcd_test(void *pvParameters)
 {
-    hd44780_t lcd = {
+    hd44780_t lcd =
+    {
         .write_cb = NULL,
         .font = HD44780_FONT_5X8,
         .lines = 2,

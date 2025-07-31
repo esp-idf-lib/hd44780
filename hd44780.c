@@ -95,11 +95,11 @@ static esp_err_t write_nibble(const hd44780_t *lcd, uint8_t b, bool rs)
     if (lcd->write_cb)
     {
         uint8_t data = (((b >> 3) & 1) << lcd->pins.d7)
-                     | (((b >> 2) & 1) << lcd->pins.d6)
-                     | (((b >> 1) & 1) << lcd->pins.d5)
-                     | ((b & 1) << lcd->pins.d4)
-                     | (rs ? 1 << lcd->pins.rs : 0)
-                     | (lcd->backlight ? 1 << lcd->pins.bl : 0);
+                       | (((b >> 2) & 1) << lcd->pins.d6)
+                       | (((b >> 1) & 1) << lcd->pins.d5)
+                       | ((b & 1) << lcd->pins.d4)
+                       | (rs ? 1 << lcd->pins.rs : 0)
+                       | (lcd->backlight ? 1 << lcd->pins.bl : 0);
         CHECK(lcd->write_cb(lcd, data | (1 << lcd->pins.e)));
         toggle_delay();
         CHECK(lcd->write_cb(lcd, data));
@@ -138,12 +138,12 @@ esp_err_t hd44780_init(const hd44780_t *lcd)
         memset(&io_conf, 0, sizeof(gpio_config_t));
         io_conf.mode = GPIO_MODE_OUTPUT;
         io_conf.pin_bit_mask =
-                GPIO_BIT(lcd->pins.rs) |
-                GPIO_BIT(lcd->pins.e) |
-                GPIO_BIT(lcd->pins.d4) |
-                GPIO_BIT(lcd->pins.d5) |
-                GPIO_BIT(lcd->pins.d6) |
-                GPIO_BIT(lcd->pins.d7);
+            GPIO_BIT(lcd->pins.rs) |
+            GPIO_BIT(lcd->pins.e) |
+            GPIO_BIT(lcd->pins.d4) |
+            GPIO_BIT(lcd->pins.d5) |
+            GPIO_BIT(lcd->pins.d6) |
+            GPIO_BIT(lcd->pins.d7);
         if (lcd->pins.bl != HD44780_NOT_USED)
             io_conf.pin_bit_mask |= GPIO_BIT(lcd->pins.bl);
         CHECK(gpio_config(&io_conf));
@@ -160,10 +160,10 @@ esp_err_t hd44780_init(const hd44780_t *lcd)
 
     // Specify the number of display lines and character font
     CHECK(write_byte(lcd,
-        CMD_FUNC_SET
-            | (lcd->lines > 1 ? ARG_FS_2_LINES : 0)
-            | (lcd->font == HD44780_FONT_5X10 ? ARG_FS_FONT_5X10 : 0),
-        false));
+                     CMD_FUNC_SET
+                     | (lcd->lines > 1 ? ARG_FS_2_LINES : 0)
+                     | (lcd->font == HD44780_FONT_5X10 ? ARG_FS_FONT_5X10 : 0),
+                     false));
     short_delay();
     // Display off
     CHECK(hd44780_control(lcd, false, false, false));
@@ -183,11 +183,11 @@ esp_err_t hd44780_control(const hd44780_t *lcd, bool on, bool cursor, bool curso
     CHECK_ARG(lcd);
 
     CHECK(write_byte(lcd,
-        CMD_DISPLAY_CTRL
-            | (on ? ARG_DC_DISPLAY_ON : 0)
-            | (cursor ? ARG_DC_CURSOR_ON : 0)
-            | (cursor_blink ? ARG_DC_CURSOR_BLINK : 0),
-        false));
+                     CMD_DISPLAY_CTRL
+                     | (on ? ARG_DC_DISPLAY_ON : 0)
+                     | (cursor ? ARG_DC_CURSOR_ON : 0)
+                     | (cursor_blink ? ARG_DC_CURSOR_BLINK : 0),
+                     false));
     short_delay();
 
     return ESP_OK;
