@@ -1,9 +1,9 @@
 ---
 name: hd44780
 description: Driver for HD44780 compatible LCD text displays
-version: 1.3.2
+version: 1.3.3
 groups:
-  - misc
+  - display
 code_owners:
   - UncleRus
 depends:
